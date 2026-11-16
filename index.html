@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pattern Necklace</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="app">
+
+  <section id="start" class="screen card center">
+    <div class="hero-beads" aria-hidden="true">
+      <span class="bead red"></span><span class="bead blue"></span><span class="bead red"></span><span class="bead blue"></span><span class="bead red"></span><span class="bead blue"></span>
+    </div>
+    <h1>Pattern Necklace</h1>
+    <p class="lead">Help Lulu make pattern necklaces! Look at the beads, find the rule, and finish 4 necklaces.</p>
+    <button id="startBtn" class="main-btn" type="button">Start</button>
+  </section>
+
+  <section id="game" class="screen" hidden>
+    <div class="mission card">
+      <div class="mission-top">
+        <span id="stepNum"></span>
+        <span id="stars" class="stars" aria-label="Necklaces done"></span>
+      </div>
+      <p id="missionText" class="mission-text"></p>
+      <p id="feedback" class="feedback" dir="rtl" lang="ar" role="status" aria-live="polite"></p>
+    </div>
+
+    <div class="card necklace-card">
+      <div class="string" aria-hidden="true"></div>
+      <div id="necklace" class="necklace" aria-label="Necklace"></div>
+    </div>
+
+    <div id="unitBox" class="card unit-box" hidden>
+      <span class="unit-label">My rule:</span>
+      <div id="unit" class="unit"></div>
+      <button id="clearBtn" class="small-btn" type="button">Clear</button>
+      <button id="repeatBtn" class="main-btn" type="button" disabled>Repeat!</button>
+    </div>
+
+    <div id="paletteBox" class="card palette-box">
+      <p id="paletteTitle" class="palette-title">Tap a bead:</p>
+      <div id="palette" class="palette"></div>
+    </div>
+
+    <div id="ruleBox" class="card palette-box" hidden>
+      <p class="palette-title">What is the rule?</p>
+      <div class="rules">
+        <button class="rule-btn" type="button" data-rule="AB">A B</button>
+        <button class="rule-btn" type="button" data-rule="AAB">A A B</button>
+        <button class="rule-btn" type="button" data-rule="ABC">A B C</button>
+      </div>
+    </div>
+
+    <div class="next-row">
+      <button id="nextBtn" class="main-btn" type="button" hidden>Next necklace →</button>
+    </div>
+  </section>
+
+  <section id="success" class="screen card center" hidden>
+    <h1>Pattern Master!</h1>
+    <p class="lead">You finished, fixed, named and made patterns. A pattern is something that <b>repeats in the same order</b>.</p>
+    <div id="myNecklace" class="necklace final" aria-label="Your necklace"></div>
+    <div class="stars big">⭐ ⭐ ⭐ ⭐</div>
+    <button id="againBtn" class="main-btn" type="button">Play again</button>
+  </section>
+
+</main>
+<script src="app.js"></script>
+</body>
+</html>
